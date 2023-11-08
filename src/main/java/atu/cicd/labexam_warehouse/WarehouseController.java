@@ -20,4 +20,9 @@ public class WarehouseController {
     public WarehouseDetails getWarehouse(@PathVariable int warehouseId){
         return warehouseService.getWarehouseById(warehouseId);
     }
+
+    @PostMapping("/confirm-capacity")
+    public WarehouseDetails confirmCapacity(@RequestBody ProductDetails productDetails){
+        return warehouseService.getWarehouseById(productDetails.getWarehouseId());
+    }
 }
